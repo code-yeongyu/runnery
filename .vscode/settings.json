@@ -13,5 +13,6 @@
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         },
-    }
+    },
+    "python.sortImports.path": "${workspaceFolder}/.venv/bin/isort"
 }
