@@ -14,6 +14,8 @@ mypy = "^0.982"
 yapf = "^0.32.0"
 pylint = "^2.15.5"
 isort = "^5.10.1"
+pytest = "^7.2.0"
+pytest-cov = "^4.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -30,6 +32,7 @@ check_untyped_defs = true
 warn_return_any = true
 show_error_codes = true
 warn_unused_ignores = true
+python_version = 3.9
 
 [tool.pydantic-mypy]
 init_forbid_extra = true
@@ -44,7 +47,7 @@ suggestion-mode = 'yes'
 unsafe-load-any-extension = 'no'
 
 [tool.pylint.format]
-max-line-length = 90
+max-line-length = 119
 
 [tool.pylint.'MESSAGES CONTROL']
 extension-pkg-whitelist = "pydantic"
@@ -53,3 +56,10 @@ disable = '''missing-docstring'''
 [tool.pylint.IMPORTS]
 allow-any-import-level = ''
 allow-wildcard-with-all = 'no'
+
+[tool.yapf]
+based_on_style = "pep8"
+spaces_before_comment = 4
+split_before_logical_operator = true
+column_limit = 119
+allow_split_before_dict_value = false  # https://github.com/google/yapf/issues/392#issuecomment-407958737
