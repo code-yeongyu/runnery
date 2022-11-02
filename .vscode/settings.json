@@ -15,5 +15,14 @@
         },
     },
     "python.sortImports.path": "${workspaceFolder}/.venv/bin/isort",
-    "python.linting.pylintPath": "${workspaceFolder}/.venv/bin/pylint"
+    "python.linting.pylintPath": "${workspaceFolder}/.venv/bin/pylint",
+    "python.linting.mypyArgs": [
+        "--strict",
+        "--follow-imports=silent",
+        "--ignore-missing-imports",
+        "--show-column-numbers",
+        "--no-pretty",
+        "--namespace-packages",
+        "--no-implicit-reexport"
+    ]
 }
