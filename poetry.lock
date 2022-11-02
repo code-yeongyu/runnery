@@ -102,6 +102,21 @@ docs = ["furo (>=2021.7.5b38)", "proselint (>=0.10.2)", "sphinx-autodoc-typehint
 test = ["appdirs (==1.4.4)", "pytest-cov (>=2.7)", "pytest-mock (>=3.6)", "pytest (>=6)"]
 
 [[package]]
+name = "pydantic"
+version = "1.10.2"
+description = "Data validation and settings management using python type hints"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+typing-extensions = ">=4.1.0"
+
+[package.extras]
+dotenv = ["python-dotenv (>=0.10.4)"]
+email = ["email-validator (>=1.0.3)"]
+
+[[package]]
 name = "pylint"
 version = "2.15.5"
 description = "python code static checker"
@@ -144,7 +159,7 @@ python-versions = ">=3.6"
 name = "typing-extensions"
 version = "4.4.0"
 description = "Backported and Experimental Type Hints for Python 3.7+"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -167,7 +182,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "4755c2e9d39dfc63a4df4f8d33369466ed5e7cb28f1c4265dc1c61294d551839"
+content-hash = "29c07d9d20d25845e5a96386d1ca2924c904c709645ce1ad406ac4f70b5c173d"
 
 [metadata.files]
 astroid = []
@@ -179,6 +194,7 @@ mccabe = []
 mypy = []
 mypy-extensions = []
 platformdirs = []
+pydantic = []
 pylint = []
 tomli = []
 tomlkit = []
