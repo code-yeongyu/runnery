@@ -24,5 +24,9 @@
         "--no-pretty",
         "--namespace-packages",
         "--no-implicit-reexport"
-    ]
+    ],
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.pytestEnabled": true
 }
