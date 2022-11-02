@@ -36,3 +36,20 @@ init_forbid_extra = true
 init_typed = true
 warn_required_dynamic_aliases = true
 warn_untyped_fields = true
+
+[tool.pylint.MASTER]
+load-plugins = ''
+persistent = 'yes'
+suggestion-mode = 'yes'
+unsafe-load-any-extension = 'no'
+
+[tool.pylint.format]
+max-line-length = 90
+
+[tool.pylint.'MESSAGES CONTROL']
+extension-pkg-whitelist = "pydantic"
+disable = '''missing-docstring'''
+
+[tool.pylint.IMPORTS]
+allow-any-import-level = ''
+allow-wildcard-with-all = 'no'
