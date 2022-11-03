@@ -14,7 +14,7 @@ class TestJob: # pylint: disable=too-few-public-methods
             job = Job(runs_on=allowed_value, steps = [])
 
             # then
-            assert job.runs_on == allowed_value if allowed_value is None else 'local'
+            assert job.runs_on == allowed_value if allowed_value else 'local'
 
         @pytest.mark.parametrize(
             'runs_on', ['loc', 'docker[python:3.9', 'doc', 'docker[python:3.9-alpine', 'wrong', 'nothing']
