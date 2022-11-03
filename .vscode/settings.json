@@ -12,7 +12,7 @@
         ],
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
-        },
+        }
     },
     "python.sortImports.path": "${workspaceFolder}/.venv/bin/isort",
     "python.linting.pylintPath": "${workspaceFolder}/.venv/bin/pylint",
@@ -28,5 +28,13 @@
     "python.testing.pytestArgs": [
         "."
     ],
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "\\.py$",
+                "cmd": "${workspaceFolder}/.venv/bin/unify --in-place ${file}"
+            }
+        ]
+    },
 }
