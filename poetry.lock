@@ -210,6 +210,17 @@ spelling = ["pyenchant (>=3.2,<4.0)"]
 testutils = ["gitpython (>3)"]
 
 [[package]]
+name = "pylint-quotes"
+version = "0.2.3"
+description = "Quote consistency checker for PyLint.."
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+pylint = ">=2.8.0"
+
+[[package]]
 name = "pyparsing"
 version = "3.0.9"
 description = "pyparsing module - Classes and methods to define and execute parsing grammars"
@@ -280,6 +291,25 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "unify"
+version = "0.5"
+description = "Modifies strings to all use the same (single/double) quote where possible."
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+untokenize = "*"
+
+[[package]]
+name = "untokenize"
+version = "0.1.1"
+description = "Transforms tokens into original source code (while preserving whitespace)."
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "wrapt"
 version = "1.14.1"
 description = "Module for decorators, wrappers and monkey patching."
@@ -298,7 +328,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "741f686050ff2e5925e2ce6f939bb0f57319b2bd36ec036e124d43e89e2ed960"
+content-hash = "1475230d972c93f2dfb8293bee2982c62364b29e2922251c595f8aa0733f1cfe"
 
 [metadata.files]
 astroid = []
@@ -318,11 +348,14 @@ platformdirs = []
 pluggy = []
 pydantic = []
 pylint = []
+pylint-quotes = []
 pyparsing = []
 pytest = []
 pytest-cov = []
 tomli = []
 tomlkit = []
 typing-extensions = []
+unify = []
+untokenize = []
 wrapt = []
 yapf = []
