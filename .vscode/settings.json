@@ -14,7 +14,9 @@
             "source.organizeImports": true
         }
     },
-    "python.sortImports.path": "${workspaceFolder}/.venv/bin/isort",
+    "isort.path": [
+        "${workspaceFolder}/.venv/bin/isort"
+    ],
     "python.linting.pylintPath": "${workspaceFolder}/.venv/bin/pylint",
     "python.linting.mypyArgs": [
         "--strict",
