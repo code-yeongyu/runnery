@@ -88,3 +88,26 @@ class TestLocalJobRunner: # pylint: disable=too-few-public-methods
         # then
         assert job.envs is not None
         assert result[command] == [job.envs['TEST_ENV'] + '\n']
+
+    def test_runner_after_run_should_change_status_to_finished(self) -> None:
+        # given
+        command = 'echo "hello world"'
+        step_name = 'echo hello_world'
+        job = Job(
+            steps=[
+                Step(
+                    name=step_name,
+                    commands=[
+                        command,
+                    ],
+                ),
+            ],
+        )
+
+        # when
+        runner = LocalJobRunner(job)
+        assert runner.is_completed is False
+        runner.run()
+
+        # then
+        assert runner.is_completed is True
