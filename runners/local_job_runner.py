@@ -17,7 +17,7 @@ class CommandExecutionError(Exception):
 
 class LocalJobRunner:
     job: Job
-    is_done = True
+    is_completed = False
 
     def __init__(self, job: Job):
         self.job = job
@@ -30,6 +30,8 @@ class LocalJobRunner:
             result = self._run_step(step)
             step_name = step.name or ''.join(step.commands)
             steps_result[step_name] = result
+
+        self.is_completed = True
 
         return steps_result
 
