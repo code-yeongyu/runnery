@@ -1,26 +1,33 @@
 {
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "files.trimTrailingWhitespace": true,
-    "python.envFile": "${workspaceFolder}/.env",
-    "python.formatting.yapfPath": "${workspaceFolder}/.venv/bin/yapf",
-    "python.analysis.typeCheckingMode": "strict",
-    "python.languageServer": "Pylance",
-    "python.formatting.provider": "yapf",
     "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
         "editor.insertSpaces": true,
-        "editor.tabSize": 4,
         "editor.rulers": [
             119
         ],
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        }
+        "editor.tabSize": 4
     },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "cmd": "${workspaceFolder}/.venv/bin/unify --in-place ${file}",
+                "match": "\\.py$"
+            }
+        ]
+    },
+    "files.trimTrailingWhitespace": true,
     "isort.path": [
         "${workspaceFolder}/.venv/bin/isort"
     ],
-    "python.linting.pylintPath": "${workspaceFolder}/.venv/bin/pylint",
+    "python.analysis.typeCheckingMode": "strict",
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.formatting.provider": "yapf",
+    "python.formatting.yapfPath": "${workspaceFolder}/.venv/bin/yapf",
+    "python.languageServer": "Pylance",
     "python.linting.mypyArgs": [
         "--strict",
         "--follow-imports=silent",
@@ -30,16 +37,9 @@
         "--namespace-packages",
         "--no-implicit-reexport"
     ],
+    "python.linting.pylintPath": "${workspaceFolder}/.venv/bin/pylint",
     "python.testing.pytestArgs": [
         "."
     ],
-    "python.testing.pytestEnabled": true,
-    "emeraldwalk.runonsave": {
-        "commands": [
-            {
-                "match": "\\.py$",
-                "cmd": "${workspaceFolder}/.venv/bin/unify --in-place ${file}"
-            }
-        ]
-    },
+    "python.testing.pytestEnabled": true
 }
