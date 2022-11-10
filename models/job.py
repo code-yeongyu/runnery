@@ -9,7 +9,7 @@ class Job(BaseModel):
     name: Optional[str] = None
     runs_on: Optional[str] = 'local'
     steps: list[Step]
-    envs: Optional[dict[str, str]] = None
+    envs: Optional[dict[str, str]] = {}
 
     class Config: # pylint: disable=too-few-public-methods
         frozen = True
