@@ -37,6 +37,10 @@
         "--namespace-packages",
         "--no-implicit-reexport"
     ],
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingTypeStubs": "none",
+        "reportUnknownMemberType": "none"
+    },
     "python.linting.pylintPath": "${workspaceFolder}/.venv/bin/pylint",
     "python.testing.pytestArgs": [
         "."
