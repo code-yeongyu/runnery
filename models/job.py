@@ -7,6 +7,7 @@ from .step import Step
 
 class Job(BaseModel):
     name: Optional[str] = None
+    docker_image_name: Optional[str] = None
     steps: list[Step]
     envs: Optional[dict[str, str]] = {}
 
