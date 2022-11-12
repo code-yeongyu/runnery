@@ -13,3 +13,7 @@ class Job(BaseModel):
 
     class Config: # pylint: disable=too-few-public-methods
         frozen = True
+
+    @property
+    def is_docker(self) -> bool:
+        return self.docker_image_name is not None
