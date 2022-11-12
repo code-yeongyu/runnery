@@ -1,27 +1,19 @@
 from typing import Optional
 
-from pydantic import BaseModel, validator
+from pydantic import BaseModel
 
 from .step import Step
 
 
 class Job(BaseModel):
     name: Optional[str] = None
-    runs_on: Optional[str] = 'local'
+    docker_image_name: Optional[str] = None
     steps: list[Step]
     envs: Optional[dict[str, str]] = {}
 
     class Config: # pylint: disable=too-few-public-methods
         frozen = True
 
-    @validator('runs_on')
-    @classmethod
-    def validate_runs_on(cls, runs_on: str) -> str:
-        runs_on = runs_on or 'local'
-        if runs_on == 'local':
-            return runs_on
-
-        if runs_on.startswith('docker[') and runs_on.endswith(']'):
-            return runs_on
-
-        raise ValueError('`runs_on` must be in format `docker[python:3.9]` or `docker[python:3.9-alpine]` or `local`')
+    @property
+    def is_docker(self) -> bool:
+        return self.docker_image_name is not None
